@@ -1,7 +1,7 @@
 <template>
     <div class="relative bg-white">
   <div class="mx-auto max-w-7xl px-6">
-    <div class="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+    <div class="flex items-center justify-between border-b-0 border-gray-100 py-4 md:justify-start md:space-x-10">
       <div class="flex justify-start lg:w-0 lg:flex-1">
         <a href="/">
           <span class="sr-only">SpeedyRetals</span>

@@ -1,6 +1,7 @@
 <template>
     <div>
-      Hey im the home
+      <sr-jumbotrone></sr-jumbotrone>
+      
     </div>
 </template>
 
