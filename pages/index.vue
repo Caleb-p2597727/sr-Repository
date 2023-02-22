@@ -1,7 +1,7 @@
 <template>
     <div>
       <sr-jumbotrone></sr-jumbotrone>
-      
+      <sr-subdetails></sr-subdetails>
     </div>
 </template>
 
