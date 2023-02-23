@@ -5,14 +5,12 @@
                 <div class="   w-60 p-2 flex flex-col justify-center items-center">
                     <img class="lg:h-72 md:h-48 w-full object-cover object-center"
                         src="https://picsum.photos/id/227/200/300" alt="" />
-                    <div class="p-6 hover:bg-indigo-700 hover:text-white transition duration-300 ease-in">
+                    <div class="p-3 hover:bg-sky-100 hover:text-white transition duration-300 ease-in">
                         <h5 class="mb-2 text-xl font-medium text-neutral-800 dark:text-neutral-50">
-                            Card title
+                            Chance to try before you buy
                         </h5>
                         <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                            This is a wider card with supporting text below as a natural
-                            lead-in to additional content. This content is a little bit
-                            longer.
+                            Get the chnace to have a feel of the vehicle before purchasing one of your own. No regrets
                         </p>
                         <p class="text-xs text-neutral-500 dark:text-neutral-300">
                             Last updated 3 mins ago
@@ -24,14 +22,12 @@
                 <div class="   w-60 p-2 flex flex-col justify-center items-center">
                     <img class="lg:h-72 md:h-48 w-full object-cover object-center"
                         src="https://picsum.photos/id/221/200/300" alt="" />
-                    <div class="p-6 hover:bg-indigo-700 hover:text-white transition duration-300 ease-in">
+                    <div class="p-3 hover:bg-sky-100 hover:text-white transition duration-300 ease-in">
                         <h5 class="mb-2 text-xl font-medium text-neutral-800 dark:text-neutral-50">
-                            Card title
+                            The perfect car for your getaway
                         </h5>
                         <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                            This is a wider card with supporting text below as a natural
-                            lead-in to additional content. This content is a little bit
-                            longer.
+                            From family cars to kited sport cars , getaway with a convinient ride nearby
                         </p>
                         <p class="text-xs text-neutral-500 dark:text-neutral-300">
                             Last updated 3 mins ago
@@ -43,14 +39,12 @@
                 <div class="   w-60 p-2 flex flex-col justify-center items-center">
                     <img class="lg:h-72 md:h-48 w-full object-cover object-center"
                         src="https://picsum.photos/id/257/200/300" alt="" />
-                    <div class="p-6 hover:bg-indigo-700 hover:text-white transition duration-300 ease-in">
+                    <div class="p-3 hover:bg-sky-100 hover:text-white transition duration-300 ease-in">
                         <h5 class="mb-2 text-xl font-medium text-neutral-800 dark:text-neutral-50">
-                            Card title
+                            An extra source of income
                         </h5>
                         <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                            This is a wider card with supporting text below as a natural
-                            lead-in to additional content. This content is a little bit
-                            longer.
+                            Put your income in drive by turning your parked car into passive income.
                         </p>
                         <p class="text-xs text-neutral-500 dark:text-neutral-300">
                             Last updated 3 mins ago
