@@ -1,6 +1,7 @@
 <template>
     <div>
-        <p>Hello Im the list of cars</p>
+        <!--<sr-searchfields></sr-searchfields>-->
+        
     </div>
 </template>
 
