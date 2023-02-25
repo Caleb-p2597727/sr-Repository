@@ -6,9 +6,11 @@
     </div>
 </template>
 
-<script>
+<script setup>
 // This will work in both `<script setup>` and `<script>`
-
+useHead({
+  title: "SpeedyRentals"
+})
 </script>
 
 <style lang="scss" scoped>
