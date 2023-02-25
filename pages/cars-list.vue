@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>Hello Im the car list page</p>
+        hi
     </div>
 </template>
 

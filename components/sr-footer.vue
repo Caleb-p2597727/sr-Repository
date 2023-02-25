@@ -65,7 +65,7 @@
                 <a href="#!" class="text-gray-600">Terms of use</a>
               </p>
               <p class="mb-4">
-                <a href="#!" class="text-gray-600">Privacy Policy</a>
+                <a href="/privacy" class="text-gray-600">Privacy Policy</a>
               </p>
               <p class="mb-4">
                 <a href="/contact" class="text-gray-600">Contact</a>
