@@ -1,10 +1,10 @@
 <template>
-    <div class="">
-        <div class="flex justify-center gap-2">
+    <div class="grid m-2">
+        <div class="flex justify-center gap-x-2 ">
             <div class=" bg-gray-200  border-2 border-slate-300 border-opacity-60 overflow-hidden rounded-lg bg-white shadow-lg dark:bg-neutral-700 w-full flex justify-center items-center">
                 <div class="   w-60 p-1 flex flex-col justify-center items-center">
                     <img class="lg:h-72 md:h-48 w-full object-cover object-center"
-                        src="car-getaway.png" alt="" />
+                        src="sr-card-pic.jpeg" alt="" />
                     <div class="p-1 hover:bg-sky-100 hover:text-white transition duration-300 ease-in">
                         <h5 class="mb-2 text-xl text-center font-medium text-neutral-800 dark:text-neutral-50">
                             Find the Perfect Car for Your Needs
@@ -20,7 +20,7 @@
             <div class=" bg-gray-200 border-2 border-slate-300 border-opacity-60 overflow-hidden rounded-lg bg-white shadow-lg dark:bg-neutral-700 w-full flex justify-center items-center">
                 <div class="   w-60 p-2 flex flex-col justify-center items-center">
                     <img class="lg:h-72 md:h-48 w-full object-cover object-center"
-                        src="car-getaway.png" alt="" />
+                        src="sr-handkey.jpeg" alt="" />
                     <div class="p-1 hover:bg-sky-100 hover:text-white transition duration-300 ease-in">
                         <h5 class="mb-2 text-xl text-center font-medium text-neutral-800 dark:text-neutral-50">
                             Earn Money by Renting Out Your Car
@@ -37,7 +37,7 @@
             <div class=" bg-gray-200 border-2 border-slate-300 border-opacity-60 overflow-hidden rounded-lg bg-white shadow-lg dark:bg-neutral-700 w-full flex justify-center items-center">
                 <div class="   w-60 p-2 flex flex-col justify-center items-center">
                     <img class="lg:h-72 md:h-48 w-full object-cover object-center"
-                        src="car-getaway.png" alt="" />
+                        src="sr-fast-service.jpeg" alt="" />
                     <div class="p-1 hover:bg-sky-100 hover:text-white transition duration-300 ease-in">
                         <h5 class="mb-2 text-xl text-center font-medium text-neutral-800 dark:text-neutral-50">
                             Experience a Seamless Rental Process
