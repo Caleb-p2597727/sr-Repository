@@ -1,7 +1,8 @@
 <!--Dynamic and optional [[make]]-->
 <template>
     <div>
-        <sr-card></sr-card>
+        hello i am make.vue
+        <sr-cards></sr-cards>
     </div>
 </template>
 
