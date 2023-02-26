@@ -1,20 +1,4 @@
-<script setup>
-//Combined to v-model on input and we store value of input
-const city = ref("");
-const cityError  = ref(false)
 
-//will direct us to the router within ()
-//const router = useRouter();
-
-//we push the path /city/input value/car
-const handleSearch = ( ) => {
-    //if its empty we return cityerror as true
-    if(!city.value){
-        return cityError.value = true
-    }
-    navigateTo(`/city/${city.value}/car`)
-}
-</script>
 <template>
     <div>
         <!--dynamic class exists, and it's only used if cityError is true-->
@@ -55,6 +39,21 @@ const handleSearch = ( ) => {
         </div>
     </div>
 </template>
+
+<script setup>
+//Combined to v-model on input and we store value of input
+const city = ref("");
+const cityError  = ref(false)
+
+//we push the path /city/input value/car
+const handleSearch = ( ) => {
+    //if its empty we return cityerror as true
+    if(!city.value){
+        return cityError.value = true
+    }
+    navigateTo(`/city/${city.value}/cars`)
+}
+</script>
 
 
 
