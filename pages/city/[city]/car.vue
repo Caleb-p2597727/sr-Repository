@@ -9,7 +9,7 @@ definePageMeta({
 
 //changes head to cars in (adds dynamic [] name)
 useHead({
-    title: `Cars in [get location from route]`,
+    title: "Cars in [get location from route]",
 });
 
 //function that returns giving str in Caps

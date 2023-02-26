@@ -1,0 +1,23 @@
+<template>
+    <div class="flex h-screen justify-center items-center flex-col">
+        <h1 class="text-9xl">{{ error.statusCode }}</h1>
+        <p class="mt-7 text-4xl">{{error.message}}</p>
+        <button @click="handleError" class="rounded mt-7 text-2xl bg-blue px-7 py-4 text-white">Go Back</button>
+    </div>
+</template>
+
+<script setup>
+
+//useError tells us the type of error and its saved in constant error
+const error = useError()
+
+//function that is ran when button is pressed (goes back to homepage)
+const handleError = () => {
+    navigateTo("/")
+}
+
+</script>
+
+<style lang="scss" scoped>
+
+</style>
