@@ -11,7 +11,7 @@
     <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pr-6 mb-6 lg:mb-0">
       <div class="relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg"
         style="background-position: 50%" data-mdb-ripple="true" data-mdb-ripple-color="light">
-        <img src="https://mdbootstrap.com/img/new/standard/city/028.jpg" class="w-full" alt="Louvre" />
+        <img src="sr-mission.jpeg" class="w-full" alt="Louvre" />
         <a href="#!">
           <div
             class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
@@ -37,7 +37,7 @@
     <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pl-6 mb-6 lg:mb-0">
       <div class="relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg"
         style="background-position: 50%" data-mdb-ripple="true" data-mdb-ripple-color="light">
-        <img src="https://mdbootstrap.com/img/new/standard/city/033.jpg" class="w-full" alt="Louvre" />
+        <img src="sr-team.png" class="w-full" alt="Louvre" />
         <a href="#!">
           <div
             class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
