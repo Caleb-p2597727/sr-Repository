@@ -1,6 +1,7 @@
 <template>
     <div class="w-full">
         <!-- iterate through list -->
+
         <sr-car-summary v-for="(item, index) in list" :item="item" :index="index" :key="item.id" />
     </div>
 </template>
@@ -13,6 +14,7 @@ const props = defineProps({
         required: true
     }
 })
+
 
 </script>
 
