@@ -2,7 +2,7 @@
     <div>
       <sr-jumbotrone></sr-jumbotrone>
       <sr-subdetails></sr-subdetails>
-      <sr-about></sr-about>
+      
     </div>
 </template>
 
