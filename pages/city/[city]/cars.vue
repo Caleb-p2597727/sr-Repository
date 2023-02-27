@@ -17,19 +17,23 @@ definePageMeta({
     layout: "sr-browse"
 })
 
-//changes head to cars in (adds dynamic [] name)
-useHead({
-    title: "Cars in [get location from route]",
-});
+
 
 //gets the whole route and puts it into variable route
 const route = useRoute()
 
+//splits router up to form array with help of / and takes index 2 and puts it into city
 let city = route.path.split("/")[2]
+
+//changes head to cars in (adds dynamic [] name)
+useHead({
+    title: `Cars in ${city}`,
+});
+
 //imports list of cars from composable/useCars.js
 const cars = useCars()
 
-//filters...
+//filters through cars object for cars with property city == city(retrieved from router)
 const listByCity = cars.filter((obj) => {
     return (obj.city).toLowerCase( ) == city;
 })

@@ -1,6 +1,7 @@
 <template>
-    
+    <!-- iterate through list -->
     <sr-car-summary v-for="(item, index) in list" :item="item" :index="index" :key="item.id" />
+    
 </template>
 
 <script setup>
