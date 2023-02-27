@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="flex">
         <p>{{ props.item.id}}</p>
         <p>{{ props.item.name }}</p>
         <p>{{ props.item.make }}</p>
