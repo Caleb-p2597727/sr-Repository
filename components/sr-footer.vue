@@ -1,10 +1,6 @@
 <template>
-    <footer class="text-center lg:text-left bg-gray-100 text-gray-600">
-        <div class="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
-          <div class="mr-12 hidden lg:block">
-            <span>Get connected with us on social networks:</span>
-          </div>
-          <div class="flex justify-center">
+    <footer class="text-center lg:text-left bg-gray-100 text-gray-600 bg-neutral-200">
+        <div class="flex justify-center items-center  p-6 ">
             <a href="#!" class="mr-6 text-gray-600">
               <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f"
                 class="w-2.5" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +34,7 @@
                 </path>
               </svg>
             </a>
-          </div>
+          
         </div>
         <div class="mx-6 py-10 text-center md:text-left">
           <div class="grid grid-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -54,7 +50,7 @@
                 <a href="#!" class="text-gray-600">Browse</a>
               </p>
               <p class="mb-4">
-                <a href="#!" class="text-gray-600">About</a>
+                <a href="/about" class="text-gray-600">About</a>
               </p>
             </div>
             <div class="">

@@ -1,6 +1,6 @@
 <template>
     <div>
-        Im about
+        <sr-about></sr-about>
     </div>
 </template>
 
