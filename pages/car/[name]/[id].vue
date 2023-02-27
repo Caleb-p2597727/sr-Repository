@@ -5,9 +5,9 @@
         <div>
             <Sr-carDetail :image="car.url" :model=car.name :seats=car.seats :rate="car.price" :miles="car.miles" ></Sr-carDetail>
         </div>
-        <SrCarAttributes></SrCarAttributes>
-        <Sr-carDescription description="hello"></Sr-carDescription>
-        <div class="flex"></div>
+        <SrCarAttributes :features="car.features"></SrCarAttributes>
+        <Sr-carDescription :description="car.description"></Sr-carDescription>
+        
         <SrCarContact></SrCarContact>
     </div>
     <!-- CAR DETAIL PAGE   -->
