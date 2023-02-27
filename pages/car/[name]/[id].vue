@@ -14,9 +14,7 @@
 </template>
 
 <script setup>
-useHead({
-    title: "route name"
-})
+
 
 //override default layout
 definePageMeta({
@@ -27,6 +25,10 @@ definePageMeta({
 const route = useRoute()
 
 let id = route.path.split("/")[3]
+
+useHead({
+    title: route.params.name
+})
 
 const cars = useCars()
 

@@ -27,8 +27,18 @@ let city = route.path.split("/")[2]
 
 //changes head to cars in (adds dynamic [] name)
 useHead({
-    title: `Cars in ${city}`,
+    title: `Cars in ${toTitleCase(city)}`,
 });
+
+//fuction returns title case
+function toTitleCase(str) {
+  return str.replace(
+    /\w\S*/g,
+    function(txt) {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    }
+  );
+}
 
 //imports list of cars from composable/useCars.js
 const cars = useCars()
