@@ -29,7 +29,7 @@
             </div>
 
             <div class="">
-                <label for="dateTo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">To</label>
+                <label for="dateTo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Until</label>
                 <input type="date" id="dateTo" class="rounded border-2 border-neutral-50 px-1 pt-[10px] pb-[8px] text-sm 
                     font-medium uppercase leading-normal text-neutral-50 bg-transparent hover:text-neutral-500 
                     focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 

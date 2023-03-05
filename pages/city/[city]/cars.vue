@@ -2,7 +2,7 @@
 
 <template>
     <div>
-        <div class="mt-32 flex">
+        <div class="mt-20 flex">
             <!--this sidebar will now be static even when we access different paths within car-->
             <Sr-sidebar></Sr-sidebar>
             <!--any other path inside of car folder will be rendered by <NuxtPage>-->
