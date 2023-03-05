@@ -5,7 +5,7 @@
         <div class="flex justify-start lg:w-0 lg:flex-1">
           <NuxtLink to="/">
             <span class="sr-only">SpeedyRetals</span>
-            <img class="h-8 w-auto sm:h-16" src="sr-logo.jpg" alt="sr-logo">
+            <img class="h-8 w-auto sm:h-16" src="car.png" alt="sr-logo">
           </NuxtLink>
         </div>
         <div class="-my-2 -mr-2 md:hidden">
