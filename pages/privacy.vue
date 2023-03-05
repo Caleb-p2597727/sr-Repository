@@ -46,6 +46,13 @@
 </template>
 
 <script setup>
+definePageMeta({
+    layout: "sr-browse"
+})
+//changes head to cars in (adds dynamic [] name)
+useHead({
+    title: "Privacy",
+});
 
 </script>
 

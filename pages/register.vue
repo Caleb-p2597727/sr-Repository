@@ -142,7 +142,15 @@
     </div>
 </template>
 
-<script lang="ts">
+<script setup>
+definePageMeta({
+    layout: "sr-browse"
+})
+
+//changes head to cars in (adds dynamic [] name)
+useHead({
+    title: "Registration",
+});
 
 </script>
 

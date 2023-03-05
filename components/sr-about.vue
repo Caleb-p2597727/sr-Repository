@@ -4,10 +4,10 @@
 <div class="container my-24 px-6 mx-auto">
 
 <!-- Section: Design Block -->
-<section class="mb-32 text-gray-800">
-  <h2 class="text-2xl font-bold mb-12 text-center">About SpeedyRentals</h2>
+<section class="mb-32 text-gray-800 ">
+  <h2 class="text-2xl font-bold mb-12 py-4 text-center">About SpeedyRentals</h2>
 
-  <div class="flex flex-wrap mb-12">
+  <div class="flex flex-wrap mb-9 py-10">
     <div class="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pr-6 mb-6 lg:mb-0">
       <div class="relative overflow-hidden bg-no-repeat bg-cover ripple shadow-lg rounded-lg"
         style="background-position: 50%" data-mdb-ripple="true" data-mdb-ripple-color="light">

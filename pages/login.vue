@@ -130,9 +130,14 @@
 </template>
 
 <script>
-    export default {
-        
-    }
+definePageMeta({
+    layout: "sr-browse"
+})
+
+//changes head to cars in (adds dynamic [] name)
+useHead({
+    title: "Log In",
+});
 </script>
 
 <style lang="scss" scoped>
