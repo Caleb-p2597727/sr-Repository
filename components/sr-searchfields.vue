@@ -2,8 +2,8 @@
 <template>
     <div>
         <!--dynamic class exists, and it's only used if cityError is true-->
-        <div class="grid grid-cols-3 gap-2 text-white space-x-2 ">
-            <div class="col-span-3">
+        <div class="grid grid-cols-16 mb-5 gap-y-1 text-white space-x-2 ">
+            <div class="col-span-8 mb-5">
                 <h2 class="mb-4 text-4xl font-semibold">Fast and easy way to <u>share</u> and <u>rent</u> a car</h2>
                 <h4 class="mb-6 text-xl font-semibold">Subheading</h4>
             </div>
@@ -35,8 +35,9 @@
                     focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 
                     active:border-neutral-200 active:text-neutral-200 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10">
             </div>
+            
 
-            <div class="col-span-3">
+            <div class="mt-7 gap-x-5">
                 <button type="button" class=" rounded border-2 border-neutral-50 px-1 pt-[10px] pb-[8px] text-sm font-medium 
                     uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out 
                     hover:border-neutral-100 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-100 
