@@ -2,7 +2,7 @@
     <div class="m-2 space-y-8 p-2">
         <div class=" grid grid-cols-12 gap-6 bg-gray-200  border-2 border-slate-300 border-opacity-60 overflow-hidden rounded-lg bg-white shadow-lg dark:bg-neutral-700  ">
             <div class="col-span-7">
-                <img class=" w-full object-cover object-center" src="sr-card-pic.jpeg" alt="" />
+                <NuxtImg class=" w-full object-cover object-center" src="sr-card-pic.jpeg" alt="" />
             </div>
             <div class=" col-span-5">
                 <div class="m-2 p-2 hover:bg-sky-100 hover:text-white transition duration-300 ease-in">
@@ -38,12 +38,12 @@
                 </div>
             </div>
             <div class="col-span-7">
-                <img class=" w-full object-cover object-center" src="sr-handkey.jpeg" alt="" />
+                <NuxtImg class=" w-full object-cover object-center" src="sr-handkey.jpeg" alt="" />
             </div>
         </div>
         <div class=" grid grid-cols-12 gap-4 bg-gray-200  border-2 border-slate-300 border-opacity-60 overflow-hidden rounded-lg bg-white shadow-lg dark:bg-neutral-700  ">
             <div class="col-span-7">
-                <img class=" w-full object-cover object-center" src="sr-fast-service.jpeg" alt="" />
+                <NuxtImg class=" w-full object-cover object-center" src="sr-fast-service.jpeg" alt="" />
             </div>
             <div class=" col-span-5">
                 <div class="m-2 p-2 hover:bg-sky-100 hover:text-white transition duration-300 ease-in">

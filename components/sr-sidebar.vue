@@ -45,8 +45,18 @@ const route = useRoute()
 const onChangeLocation = () => {
     // if input is empty we return
     if(!city.value) return;
+    //we check if the input is a number
+    if(!isNaN(parseInt(city.value))){
+        //throws error message if input is a number
+        throw createError({
+            statusCode: 400,
+            message: "Invalid city format",
+        });
+    }
     updateModal("location")
     navigateTo(`/city/${city.value}/cars`)
+    //we empty input
+    city.value = "";
 }
 </script>
 
