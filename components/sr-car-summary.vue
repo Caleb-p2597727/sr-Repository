@@ -1,25 +1,30 @@
 <template>
-  <div class="shadow border rounded-xl w-full overflow-hidden mb-5 cursor-pointer h-[200px]"
-  @click="handleSearch()">
-    <div class="flex h-full">
-      <NuxtImg :src="props.item.url" alt="" class="w-[300px] h-full"/>
+  <div class="shadow border rounded-xl w-full overflow-hidden mb-5 cursor-pointer h-[200px]" >
+
+    <div class="grid grid-cols-3 h-full">
+
+      <NuxtImg :src="props.item.url" alt="" class="w-[300px] h-full" @click="handleSearch()"/>
+
       <div class="p-4 flex flex-col">
         <div>
-        
-        <h1 class="font-semibold text-2xl text-blue-700">{{ props.item.name }}</h1>
-        <p class="text-gray-700">{{ props.item.make }}</p>
-        
+          <h1 class="font-semibold text-2xl text-blue-700">{{ props.item.name }}</h1>
+          <p class="text-gray-700">{{ props.item.make }}</p>
         </div>
         <h1 class="mt-auto text-xl">£{{ props.item.price }}/day</h1>
+      </div>
+
+      <div class="pt-4 pl-44">
+        <!-- when image is clicked favored will turn to its booloean opposite -->
+        <img class=" w-7 h-7 right-5 top-2 z-20" :src="favored ? heartFilled : heartOutline" alt="" @click="favored = !favored">
+      </div>
+
     </div>
-    <div>
-      
-    </div>
-  </div>
   </div>
 </template>
 
 <script setup>
+import heartFilled from "@/assets/heartFilled.png"
+import heartOutline from "@/assets/heartOutline.png"
 
 const props = defineProps({
   item: {
@@ -31,15 +36,20 @@ const props = defineProps({
   }
 })
 
-const handleSearch = () => {
-    const name = props.item.name
-    const id = props.item.id
+const id = props.item.id
 
-    navigateTo(`/car/${name}/${id}`)
+const handleSearch = () => {
+  const name = props.item.name
+  
+
+  navigateTo(`/car/${name}/${id}`)
 }
+
+//
+const favored = useState(`favored-${id}`, () => {
+  return false
+})
 
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
