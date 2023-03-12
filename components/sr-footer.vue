@@ -58,7 +58,7 @@
                 Useful links
               </h6>
               <p class="mb-4">
-                <a href="#!" class="text-gray-600">Terms of use</a>
+                <a href="/terms" class="text-gray-600">Terms of use</a>
               </p>
               <p class="mb-4">
                 <a href="/privacy" class="text-gray-600">Privacy Policy</a>
