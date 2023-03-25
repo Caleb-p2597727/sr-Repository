@@ -1,63 +1,120 @@
 <template>
-    <div class="shadow border rounded-lg w-64 mr-10 z-30 h-[190px]">
-        <div class="p-5 flex justify-between relative cursor-pointer border-b">
-            <h3>Location</h3>
-            <h3 @click="updateModal('location')" class="text-blue-400 capitalize">{{route.params.city}}</h3>
-            <div 
-            v-if="modal.location"
-            class="absolute border shadow left-56 p-5 top-1 -m-1 bg-white">
-              <input type="text" class="border p-1 rounded" v-model="city"/>
-              <button @click="onChangeLocation()" class="bg-indigo-400 w-full mt-2 rounded text-white p-1">
-                Apply
-              </button>
-            </div>
-        </div>
-        <div class="p-5 flex justify-between relative cursor-pointer border-b">
-            <h3>Make</h3>
-            <h3 class="text-blue-400 capitalize">Toyota</h3>
-        </div>
-        <div class="p-5 flex justify-between relative cursor-pointer ">
-            <h3>Price</h3>
-            <h3 class="text-blue-400 capitalize"></h3>
-        </div>
+  <div
+    class="grid grid-cols-1 border border-sky-700 divide-sky-700 rounded-lg divide-y p-1 gap-x-4 relative w-2/5 mr-10 h-3/5"
+  >
+    <div>
+      <h3 class="divide-y-2 px-4 py-2">City</h3>
+      <div
+        class="relative m-1 mb-4 p-2 py-2 border-gray-200 flex w-full items-stretch"
+      >
+        <span
+          class="flex items-center whitespace-nowrap rounded-l border border-r-0 border-solid border-neutral-300 px-3 py-[0.25rem] text-center text-base font-normal leading-[1.6] text-neutral-700 dark:border-neutral-600 dark:bg-zinc-800 dark:text-neutral-200 dark:placeholder:text-neutral-200"
+          id="basic-addon1"
+          >{{ route.params.city }}</span
+        >
+        <input
+          type="text"
+          class="relative m-0 w-0.5 min-w-0 flex-auto rounded-r border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition ease-in-out focus:z-[3] focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
+          placeholder="City"
+          aria-label="City"
+          aria-describedby="basic-addon1"
+          
+          v-model="city"
+        />
+      </div>
     </div>
+
+    <div class="px-4 py-2 mb-6">
+      <h3 class="font-bold mb-4">Make</h3>
+      <div class="flex">
+        <select
+          class="border border-gray-300 flex-grow p-2 rounded text-gray-600 text-sm"
+          data-te-select-init
+          multiple
+        >
+          <option
+            v-for="(item, index) in listOfCarMakes"
+            :key="index"
+            :value="index"
+          >
+            {{ item }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="px-4 py-2 mb-6">
+      <h3 class="font-bold mb-4">Price</h3>
+      <div class="grid grid-cols-3 gap-4">
+        <div class="flex items-center justify-center pl-3">
+          <span>£</span>
+          <input
+            type="number"
+            min="0"
+            class="border border-gray-300 rounded w-20 mx-2 px-2 py-1 text-sm"
+            placeholder="Min"
+          />
+        </div>
+        <h3 class="flex items-center justify-center">to</h3>
+        <div class="flex items-center justify-center">
+          <span>£</span>
+          <input
+            type="number"
+            min="0"
+            class="border border-gray-300 rounded w-20 mx-2 px-2 py-1 text-sm"
+            placeholder="Max"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="grid place-items-center px-4 py-4 mb-2">
+      <button
+        @click="onChangeLocation"
+        type="submit"
+        class="px-4 py-2 bg-indigo-500 text-white font-semibold rounded-md hover:bg-indigo-600"
+      >
+        Show all results
+      </button>
+    </div>
+  </div>
 </template>
 
 <script setup>
-
-
 //filters
 const modal = ref({
-    make: false,
-    location: false,
-    price: false,
-})
+  make: false,
+  location: false,
+  price: false,
+});
 
 //update filters boolean value
 const updateModal = (key) => {
-    //chnage value of modal. to what its not
-    modal.value[key] = !modal.value[key];
-}
+  //chnage value of modal. to what its not
+  modal.value[key] = !modal.value[key];
+};
 
-const city = ref("")
-const route = useRoute()
+const city = ref("");
+const route = useRoute();
 //we push the path /city/input value/car
 const onChangeLocation = () => {
-    // if input is empty we return
-    if(!city.value) return;
-    //we check if the input is a number
-    if(!isNaN(parseInt(city.value))){
-        //throws error message if input is a number
-        throw createError({
-            statusCode: 400,
-            message: "Invalid city format",
-        });
-    }
-    updateModal("location")
-    navigateTo(`/city/${city.value}/cars`)
-    //we empty input
-    city.value = "";
-}
+  // if input is empty we return
+  // if (!city.value) return;
+  // //we check if the input is a number
+  // if (!isNaN(parseInt(city.value))) {
+  //   //throws error message if input is a number
+  //   throw createError({
+  //     statusCode: 400,
+  //     message: "Invalid city format",
+  //   });
+  // }
+  //updateModal("location");
+  navigateTo(`/city/${city.value}/cars`);
+  //we empty input
+  city.value = "";
+};
+
+const listOfCarMakes = useCarMakes();
 </script>
 
 <style lang="scss" scoped></style>

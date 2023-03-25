@@ -1,6 +1,6 @@
 <template>
     <div>
-       <sr-header></sr-header>   
+       <sr-header  ></sr-header>   
       <slot />
       <sr-footer />
     </div>

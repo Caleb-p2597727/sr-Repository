@@ -6,7 +6,10 @@ export const useCars = () => {
     return cars;
 }
 
-// export const useFoo = () => {
-//     return useState('foo', () => 'bar')
-//   }
-  
+export const useCarMakes = () => {
+    return cars
+        .map(car=> car.make)
+        .filter((value, index, array) => array.indexOf(value) === index);
+
+}
+
