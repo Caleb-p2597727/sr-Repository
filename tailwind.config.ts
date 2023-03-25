@@ -4,6 +4,9 @@ import type { Config } from 'tailwindcss'
 export default <Partial<Config>>{
     theme: {
         extend: {
+            fontFamily: {
+                'sans': ['Montserrat-SemiBoldItalic', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
+              },
             colors: {
                 'blue': '#1fb6ff',
                 'purple': '#7e5bef',
