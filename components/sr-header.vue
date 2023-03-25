@@ -1,11 +1,11 @@
 <template>
-  <div class="relative bg-white">
+  <div class="relative" :class="bg">
     <div class="mx-auto max-w-7xl px-6">
       <div class="flex items-center justify-between border-b-0 border-gray-100 py-4 md:justify-start md:space-x-10">
         <div class="flex justify-start lg:w-0 lg:flex-1">
           <NuxtLink to="/">
             <span class="sr-only">SpeedyRetals</span>
-            <NuxtImg class="h-8 w-auto sm:h-16" src="car.png" alt="sr-logo"/>
+            <img class="h-8 w-auto sm:h-16" src="~/assets/sp-logo.svg" alt="sr-logo"/>
           </NuxtLink>
         </div>
         <div class="-my-2 -mr-2 md:hidden">
@@ -13,10 +13,6 @@
             class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
             aria-expanded="false">
             <span class="sr-only">Open menu</span>
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-              aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
           </button>
         </div>
         <nav class="hidden space-x-10 md:flex">
@@ -34,7 +30,17 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup>
+//create a new property called bg colour
+//use this property to pass colour 
+//property called bg
+//type - string
+const props = defineProps({
+    bg: {
+        type: String,
+        default: 'bg-white'
+    }
+})
 
 </script>
 
