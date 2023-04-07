@@ -25,9 +25,9 @@
       </div>
     </div>
     <!-- LOCATION ENDS -->
-    <!-- MAKE ENDS -->
+    <!-- MAKE STARTS -->
     <div class="px-4 py-2 mb-6">
-      <h3 class="font-bold mb-4">Make </h3>
+      <h3 class="font-bold mb-4">Make {{route.params.make || "Any"}}</h3>
       <div class="grid">
         <select
           class="border border-neutral-300 flex-grow p-2 rounded text-gray-600 text-sm"
@@ -38,6 +38,7 @@
             v-for="(item, index) in listOfCarMakes"
             :key="index"
             :value="index"
+            @click="onChangeMake(item)"
           >
             {{ item }}
           </option>
@@ -48,15 +49,17 @@
 
     <!-- PRICE STARTS -->
     <div class="px-4 py-2 mb-6 ">
-      <h3 class="font-bold mb-4">Price</h3>
+      <h3 class="font-bold mb-4">Price {{ priceRangeText }}</h3>
       <div class="grid grid-cols-3 gap-4">
         <div class="flex items-center justify-center pl-3">
-          <span>£</span>
+          <span>£ </span>
           <input
             type="number"
             min="0"
             class="border border-neutral-300 rounded  w-20 mx-2 px-2 py-1 text-sm"
             placeholder="Min"
+            v-model="priceRange.min"
+            
           />
         </div>
         <h3 class="flex items-center justify-center">to</h3>
@@ -67,6 +70,8 @@
             min="0"
             class="border border-neutral-300 rounded w-20 mx-2 px-2 py-1 text-sm"
             placeholder="Max"
+            v-model="priceRange.max"
+            
           />
         </div>
       </div>
@@ -85,24 +90,74 @@
   </div>
 </template>
 
+
+
 <script setup>
-//filters
-const modal = ref({
-  make: false,
-  location: false,
-  price: false,
-});
-
-//update filters boolean value
-const updateModal = (key) => {
-  //chnage value of modal. to what its not
-  modal.value[key] = !modal.value[key];
-};
-
 const city = ref("");
+
 const route = useRoute();
+
+const router = useRouter()
+
+const priceRangeText = computed(() => {
+  const minPrice = route.query.minPrice;
+  const maxPrice = route.query.maxPrice;
+
+  if (!minPrice && !maxPrice) return "Any"
+  else if (!minPrice && maxPrice) {
+    return `< $${maxPrice}`
+  } 
+  else if (minPrice && !maxPrice) {
+    return `> $${minPrice}`
+  }
+  else{
+    return `$${minPrice}-$${maxPrice}`
+  }
+});
 //we push the path /city/input value/car
 const onChangeLocation = () => {
+  //updateModal("location");
+  navigateTo(`/city/${city.value}/cars`);
+  //we empty input
+  city.value = "";
+
+  //if we give min and max price this if will be ran
+  if(priceRange.value.max && priceRange.value.min){
+    // if min price entered is bigger than max price entered we return
+    if(priceRange.value.min > priceRange.value.max) return;
+  }
+
+  //we push the query onto the router
+  router.push({
+    query: {
+      minPrice: priceRange.value.min,
+      maxPrice: priceRange.value.max
+    }
+  })
+
+};
+
+//we push the path /city/input value/car
+const onChangeMake = (make) => {
+
+  navigateTo(`/city/${route.params.city}/cars/${make}`);
+  //we empty input
+  city.value = "";
+};
+const listOfCarMakes = useCarMakes();
+
+const priceRange = ref({
+  min: "",
+  max: ""
+})
+
+
+
+
+
+
+
+// Redundant
   // if input is empty we return
   // if (!city.value) return;
   // //we check if the input is a number
@@ -113,13 +168,19 @@ const onChangeLocation = () => {
   //     message: "Invalid city format",
   //   });
   // }
-  //updateModal("location");
-  navigateTo(`/city/${city.value}/cars`);
-  //we empty input
-  city.value = "";
-};
 
-const listOfCarMakes = useCarMakes();
+// //filters
+// const modal = ref({
+//   make: false,
+//   location: false,
+//   price: false,
+// });
+
+// //update filters boolean value
+// const updateModal = (key) => {
+//   //chnage value of modal. to what its not
+//   modal.value[key] = !modal.value[key];
+// };
 </script>
 
 <style lang="scss" scoped></style>
