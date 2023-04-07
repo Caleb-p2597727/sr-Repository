@@ -10,7 +10,7 @@
     </div>
     <div class="p-3 flex">
       <NuxtLink
-        class="text-blue-400 mr-4"
+        class="text-sky-400 mr-4"
         :to="`/profile/listings/view/${listing.id}`"
         >View</NuxtLink
       >
