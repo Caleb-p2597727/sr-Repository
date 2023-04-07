@@ -1,6 +1,6 @@
 <template>
     <div class="even:bg-gray-100 p-4">
-      <h1 class="font-fold text-2xl">Laith Harb</h1>
+      <h1 class="font-bold text-2xl">Laith Harb</h1>
       <p class="text-gray-700">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam
         repellendus at, similique illum dolor numquam ex tempora deleniti tempore
