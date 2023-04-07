@@ -21,7 +21,7 @@
 
 <script setup>
 definePageMeta({
-  layout: "custom",
+  layout: "sr-browse",
 });
 //uses listings data
 const { listings } = useCars();
