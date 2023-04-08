@@ -12,6 +12,7 @@
 </template>
 
 <script setup>
+import { useCars } from "@/composables/useCars";
 //override default layout
 definePageMeta({
     layout: "sr-browse"
@@ -41,7 +42,9 @@ function toTitleCase(str) {
 }
 
 //imports list of cars from composable/useCars.js
-const cars = useCars()
+// const cars = useCars()
+// console.log(cars)
+const { cars, listings } = useCars();
 
 //filters through cars object for cars with property city == city(retrieved from router)
 const listByCity = cars.filter((obj) => {
