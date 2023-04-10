@@ -13,14 +13,6 @@
 definePageMeta({
   layout: "sr-browse",
   //authorisation
-  middleware: [
-    function(to, from){
-      const user = useSupabaseUser()
-      if(user.value) {
-        return
-      }
-      return navigateTo("/logger")
-    }
-  ]
+  middleware: ["auth"]
 });
 </script>

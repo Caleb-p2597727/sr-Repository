@@ -8,13 +8,11 @@ export const useCars = () => {
         cars,
         listings
     };
-    
 }
 
 export const useCarMakes = () => {
     return cars
         .map(car=> car.make)
         .filter((value, index, array) => array.indexOf(value) === index);
-
 }
 
