@@ -66,10 +66,10 @@ const login = async () => {
     }
 }
 
-const logout = () => {
+const logout = async () => {
   //make user.value = null
   //remove JWT from cookie browser
-  const {error} = supabase.auth.signOut()
+  const {error} = await supabase.auth.signOut()
 
   if(error) {
     console.log(error);
