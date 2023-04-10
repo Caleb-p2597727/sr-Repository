@@ -31,7 +31,7 @@
         @change-input="onChangeInput"
       />
         <!-- listing image upload -->
-      <CarAdImage @change-input="onChangeInput"/>
+      <CarAdImage />
 
     </div>
   </div>
