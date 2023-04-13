@@ -23,6 +23,15 @@
           v-model="city"
         />
       </div>
+      <div>
+        <button
+        @click="onChangeLocation"
+        type="submit"
+        class="px-4 py-2 bg-indigo-300 text-white font-semibold rounded-md hover:bg-indigo-600"
+      >
+        Change city
+      </button>
+      </div>
     </div>
     <!-- LOCATION ENDS -->
     <!-- MAKE STARTS -->
@@ -80,7 +89,7 @@
 
     <div class="grid place-items-center px-4 py-4 mb-2">
       <button
-        @click="onChangeLocation"
+        @click="onViewAllResults"
         type="submit"
         class="px-4 py-2 bg-indigo-300 text-white font-semibold rounded-md hover:bg-indigo-600"
       >
@@ -114,12 +123,9 @@ const priceRangeText = computed(() => {
     return `$${minPrice}-$${maxPrice}`
   }
 });
+
 //we push the path /city/input value/car
-const onChangeLocation = () => {
-  //updateModal("location");
-  navigateTo(`/city/${city.value}/cars`);
-  //we empty input
-  city.value = "";
+const onViewAllResults = () => {
 
   //if we give min and max price this if will be ran
   if(priceRange.value.max && priceRange.value.min){
@@ -134,53 +140,26 @@ const onChangeLocation = () => {
       maxPrice: priceRange.value.max
     }
   })
+};
 
+//we push the path /city/input value/car
+const onChangeLocation = () => {
+  navigateTo(`/city/${city.value}/cars`);
+  //we empty input
+  city.value = "";
 };
 
 //we push the path /city/input value/car
 const onChangeMake = (make) => {
-
   navigateTo(`/city/${route.params.city}/cars/${make}`);
-  //we empty input
-  city.value = "";
 };
+
 const listOfCarMakes = useCarMakes();
 
 const priceRange = ref({
   min: "",
   max: ""
 })
-
-
-
-
-
-
-
-// Redundant
-  // if input is empty we return
-  // if (!city.value) return;
-  // //we check if the input is a number
-  // if (!isNaN(parseInt(city.value))) {
-  //   //throws error message if input is a number
-  //   throw createError({
-  //     statusCode: 400,
-  //     message: "Invalid city format",
-  //   });
-  // }
-
-// //filters
-// const modal = ref({
-//   make: false,
-//   location: false,
-//   price: false,
-// });
-
-// //update filters boolean value
-// const updateModal = (key) => {
-//   //chnage value of modal. to what its not
-//   modal.value[key] = !modal.value[key];
-// };
 </script>
 
 <style lang="scss" scoped></style>

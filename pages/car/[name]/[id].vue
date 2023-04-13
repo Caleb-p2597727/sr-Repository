@@ -3,7 +3,8 @@
     <div>
         <!-- CAR DETAIL PAGE -->
         <div>
-            <Sr-carDetail :image="car.url" :model=car.name :seats=car.seats :rate="car.price" :miles="car.miles" ></Sr-carDetail>
+            <!-- the url from car.url is not displaying not sure why -->
+            <Sr-carDetail  :image="car.url" :model=car.name :seats=car.seats :rate="car.price" :miles="car.miles" ></Sr-carDetail>
         </div>
         <SrCarAttributes :features="car.features"></SrCarAttributes>
         <Sr-carDescription :description="car.description"></Sr-carDescription>
@@ -24,18 +25,26 @@ definePageMeta({
 //gets the whole route and puts it into variable route
 const route = useRoute()
 
-let id = route.path.split("/")[3]
+
+const {data: car} = await useFetchCar(route.params.id);
+
+
+
+
 
 useHead({
     title: route.params.name
 })
 
-const cars = useCars()
+// let id = route.path.split("/")[3]
 
-//filters...
-const car = cars.find((obj) => {
-    return obj.id == id;
-})
+// const {cars, listings} = useCars()
+
+// //filters...
+// console.log(cars)
+// const car = cars.find((obj) => {
+//     return obj.id == id;
+// })
 
 console.log(car.price)
 </script>

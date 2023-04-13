@@ -45,7 +45,8 @@ const handleSearch = () => {
   navigateTo(`/car/${name}/${id}`)
 }
 
-//
+//this is for the heart that appears next to th listing, shows its favioured by the 
+//customer, not fully finished but dosen't need to be completed
 const favored = useState(`favored-${id}`, () => {
   return false
 })

@@ -1,4 +1,5 @@
 <template>
+  <!-- this component is not used  -->
     <div class="relative bg-sky-100">
       <div class="mx-auto max-w-7xl px-6">
         <div class="flex items-center justify-between border-b-0 border-gray-100 py-4 md:justify-start md:space-x-10">

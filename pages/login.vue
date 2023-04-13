@@ -138,24 +138,7 @@ definePageMeta({
     layout: "sr-browse"
 })
 
-//changes head to cars in (adds dynamic [] name)
-// useHead({
-//     title: "Log In",
-// });
-// const supabase = useSupabaseAuthClient()
-// const user = useSupabaseUser()
 
-// const login = async () => {
-//     console.log("clicked");
-    
-//     const {error} = supabase.auth.signInWithOAuth({
-//         provider: "google"
-//     })
-
-//     if (error) {
-//         console.log(error);
-//     }
-// }
 
 
 </script>

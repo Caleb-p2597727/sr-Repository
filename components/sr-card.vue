@@ -1,4 +1,5 @@
 <template>
+    <!-- this card component is not used -->
     <div class="shadow border w-full overflow-hidden mb-5 cursor-pointer h-[200px]">
         <div class="flex h-full">
             <NuxtImg src="https://carwow-uk-wp-3.imgix.net/Volvo-XC40-white-scaled.jpg" alt="" class="w-[300px] h-full" />
