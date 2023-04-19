@@ -6,8 +6,8 @@ export default async (id) => {
     //error message
     if (error.value){
         throw createError({
-            ...error.value,
-            statusMessage: "Unable to fetch Car"
+            statusCode: error.value.statusCode,
+            statusMessage: error.value.statusMessage,
         })
     }
     //if no error we return the data
