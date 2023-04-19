@@ -15,8 +15,6 @@
 </template>
 
 <script setup>
-
-
 //override default layout
 definePageMeta({
     layout: "sr-browse"
@@ -24,28 +22,12 @@ definePageMeta({
 
 //gets the whole route and puts it into variable route
 const route = useRoute()
-
-
+//we grab the data and call it car
 const {data: car} = await useFetchCar(route.params.id);
-
-
-
-
-
+console.log(car)
 useHead({
     title: route.params.name
 })
-
-// let id = route.path.split("/")[3]
-
-// const {cars, listings} = useCars()
-
-// //filters...
-// console.log(cars)
-// const car = cars.find((obj) => {
-//     return obj.id == id;
-// })
-
 console.log(car.price)
 </script>
 

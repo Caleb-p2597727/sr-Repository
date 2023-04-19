@@ -1,10 +1,12 @@
 export default async (id) => {
     //use fetch is a composbale
-    const {data, error} = await useFetch(`/api/cars/${id}`);
+    //data and error if any error occurs
+    const {data, error} = await useFetch(`/api/car/${id}`);
 
+    //error message
     if (error.value){
         throw createError({
-            ...console.log(error.value),
+            ...error.value,
             statusMessage: "Unable to fetch Car"
         })
     }

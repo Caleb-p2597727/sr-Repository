@@ -2,7 +2,7 @@
 
 <template>
     <div>
-      {{ cars }}
+      <!-- {{ cars }} -->
         <div class="mt-20 flex">
             <!--this sidebar will now be static even when we access different paths within car-->
             <Sr-sidebar></Sr-sidebar>
