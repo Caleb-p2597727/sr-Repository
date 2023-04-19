@@ -36,7 +36,7 @@
     <!-- LOCATION ENDS -->
     <!-- MAKE STARTS -->
     <div class="px-4 py-2 mb-6">
-      <h3 class="font-bold mb-4">Make {{route.params.make || "Any"}}</h3>
+      <h3 class="font-bold mb-4">Make: {{route.params.make || "Any"}}</h3>
       <div class="grid">
         <select
           class="border border-neutral-300 flex-grow p-2 rounded text-gray-600 text-sm"

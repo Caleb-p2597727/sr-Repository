@@ -20,8 +20,6 @@ definePageMeta({
     layout: "sr-browse"
 })
 
-
-
 //gets the whole route and puts it into variable route
 const route = useRoute()
 
@@ -42,7 +40,6 @@ function toTitleCase(str) {
     }
   );
 }
-
 
 const {data: cars, refresh} = await useFetchCars(route.params.city, {
   minPrice: route.query.minPrice,
@@ -68,8 +65,6 @@ watch(
 // const listByCity = cars.filter((obj) => {
 //     return (obj.city).toLowerCase( ) == city;
 // })
-
-
 </script>
 
 
