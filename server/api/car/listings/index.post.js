@@ -37,31 +37,31 @@ export default defineEventHandler(async(event) => {
     }
 
     const{     
-        image   ,        
-        name , 
-        numberOfSeats  ,
-        miles   ,        
-        price   ,        
-        features  ,     
-        description  ,   
-        city  ,          
-        make ,           
-        model     ,      
+        image,        
+        name, 
+        numberOfSeats,
+        miles,        
+        price,        
+        features,     
+        description,   
+        city,          
+        make,           
+        model,      
         listerId         
     } = body
 
     const car = await prisma.car.create({
         data:{
-            image   ,        
-            name , 
-            numberOfSeats  ,
-            miles   ,        
-            price   ,        
-            features  ,     
-            description  ,   
-            city: city.toLowerCase()  ,          
-            make ,           
-            model     ,      
+            image,        
+            name, 
+            numberOfSeats,
+            miles,        
+            price,        
+            features,     
+            description,   
+            city: city.toLowerCase(),          
+            make,           
+            model,      
             listerId  
         }
 
