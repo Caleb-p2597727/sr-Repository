@@ -19,6 +19,7 @@
     "@supabase/ui": "^0.36.5",
     "@vitejs/plugin-vue": "^4.1.0",
     "@vueuse/nuxt": "^9.13.0",
+    "joi": "^17.9.1",
     "prisma": "^4.13.0"
   }
 }
