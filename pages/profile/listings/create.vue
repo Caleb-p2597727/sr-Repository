@@ -38,7 +38,7 @@
         class="bg-sky-300 text-white rounded py-2 px-7 mt-3">Submit</button>
         
       </div>
-      <p v-if="errorMessage"> {{ errorMessage }}</p>
+      <p v-if="errorMessage" class="mt-3 text-red-400"> {{ errorMessage }}</p>
 
     </div>
   </div>
@@ -121,37 +121,40 @@ const inputs = [
   },
 ];
 
-// const isButtonDisabled = computed(() => {
-//   for( let key in info.value){
-//     if(!info.value[key]) return true
-//   };
-// })
+const isButtonDisabled = computed(() => {
+  for( let key in info.value){
+    if(!info.value[key]) return true
+  };
+  return false
+})
 
-// const handleSubmit = async () => {
-//   console.log("i ma pressed")
-//   const body = {
-//     ...info.value,
-//     city: info.value.city.toLowerCase(),
-//     features: info.value.features.split(", "),
-//     numberOfSeats: parseInt(info.value.seats),
-//     miles: parseInt(info.value.miles),
-//     price: parseInt(info.value.price),
-//     year: parseInt(info.value.year),
-//     name: `${info.value.make} ${info.value.model}`,
-//     listerId: user.value.id,
-//     image: "agg"
-//   };
+const handleSubmit = async () => {
+  console.log("i ma pressed")
+  // destructure body
+  const body = {
+    ...info.value,
+    city: info.value.city.toLowerCase(),
+    features: info.value.features.split(", "),
+    numberOfSeats: parseInt(info.value.seats),
+    miles: parseInt(info.value.miles),
+    price: parseInt(info.value.price),
+    year: parseInt(info.value.year),
+    name: `${info.value.make} ${info.value.model}`,
+    listerId: user.value.id,
+    image: "agg"
+  };
 
-//   delete body.seats;
+  // we dont need
+  delete body.seats;
 
-//   try {
-//     const response = await $fetch("/api/car/listings", {
-//       method: "post",
-//       body
-//     })
-//     navigateTo('/profile/listings')
-//   } catch (err){
-//     errorMessage.value = err.statusMessage; 
-//   }
-// }
+  try {
+    const response = await $fetch("/api/car/listings", {
+      method: "post",
+      body
+    })
+    navigateTo('/profile/listings')
+  } catch (err){
+    errorMessage.value = err.statusMessage; 
+  }
+}
 </script>
