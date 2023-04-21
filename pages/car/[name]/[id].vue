@@ -4,7 +4,7 @@
         <!-- CAR DETAIL PAGE -->
         <div>
             <!-- the url from car.url is not displaying not sure why -->
-            <Sr-carDetail  :image="car.url" :model=car.name :seats=car.seats :rate="car.price" :miles="car.miles" ></Sr-carDetail>
+            <Sr-carDetail  :image="car.image" :model=car.name :seats=car.numberOfSeats :rate="car.price" :miles="car.miles" ></Sr-carDetail>
         </div>
         <SrCarAttributes :features="car.features"></SrCarAttributes>
         <Sr-carDescription :description="car.description"></Sr-carDescription>
@@ -24,11 +24,11 @@ definePageMeta({
 const route = useRoute()
 //we grab the data and call it car
 const {data: car} = await useFetchCar(route.params.id);
-console.log(car)
+
 useHead({
     title: route.params.name
 })
-console.log(car.price)
+
 </script>
 
 
