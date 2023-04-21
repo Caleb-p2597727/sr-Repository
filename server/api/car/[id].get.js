@@ -1,12 +1,21 @@
 import cars from '@/data/cars.json';
+import { PrismaClient } from '@prisma/client';
 
-export default defineEventHandler((event) => {
+const prisma = new PrismaClient();
+
+export default defineEventHandler(async(event) => {
     //extract id from endpoint from params
     const { id } = event.context.params;
 
-    const car = cars.find(c => {
-        return c.id === parseInt(id)
-    })
+    const car = await prisma.car.findUnique({
+        where: {
+            id: parseInt(id),
+        },
+    });
+
+    // const car = cars.find(c => {
+    //     return c.id === parseInt(id)
+    // })
 
     // we throw this error if car dosent exists
     //client side 
