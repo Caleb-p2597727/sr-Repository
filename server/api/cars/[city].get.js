@@ -1,36 +1,29 @@
-import cars from '@/data/cars.json';
+import { PrismaClient } from '@prisma/client';
 
-export default defineEventHandler((event) => {
+const prisma = new PrismaClient();
+
+export default defineEventHandler(async (event) => {
     const { city } = event.context.params;
-    //gives us an obect of all our query parameters
-    const { make, minPrice, maxPrice} = getQuery(event)
+    const { make, minPrice, maxPrice } = getQuery(event);
 
-    let filteredCars = cars;
-    //filter to display only city within route
-    filteredCars = filteredCars.filter((car) => {
-        return car.city.toLowerCase() === city.toLowerCase()
+    let filteredCars = await prisma.car.findMany({
+        where: {
+            city: {
+                equals: city.toLowerCase(),
+            },
+            make: make ? {
+                equals: make.toLowerCase(),
+            } : undefined,
+            price: minPrice && maxPrice ? {
+                gte: parseInt(minPrice),
+                lte: parseInt(maxPrice),
+            } : minPrice ? {
+                gte: parseInt(minPrice),
+            } : maxPrice ? {
+                lte: parseInt(maxPrice),
+            } : undefined,
+        },
     });
 
-    // if make query exists|| if make filtered
-    if(make){
-        filteredCars = filteredCars.filter((car) => {
-            return car.make.toLowerCase() === make.toLowerCase();
-        });
-    }
-
-    // if minPrice query exists|| if minPrice filtered
-    if(minPrice){
-        filteredCars = filteredCars.filter((car) => {
-            // will be a string not a number so parseInt is
-            return car.price >= parseInt(minPrice); 
-        });
-    }
-    // if maxPrice query exists|| if maxPrice filtered
-    if(maxPrice){
-        filteredCars = filteredCars.filter((car) => {
-            return car.price <= parseInt(maxPrice); 
-        });
-    }
-
     return filteredCars;
-})
+});
