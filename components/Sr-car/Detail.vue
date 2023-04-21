@@ -26,10 +26,9 @@ const props = defineProps({
   },
   seats: {
     type: Number,
-    default:0
   },
   miles: {
-    type: String,
+    type: Number,
  
   },
   rate: {
