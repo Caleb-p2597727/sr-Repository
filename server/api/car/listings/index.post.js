@@ -1,6 +1,7 @@
 import Joi from "joi";
 import { PrismaClient } from "@prisma/client";
 
+//instance of prisma
 const prisma = new PrismaClient()
 
 //we pass in everything we want to validate
@@ -22,13 +23,13 @@ const schema = Joi.object({
 })
 
 export default defineEventHandler(async(event) => {
-    //gives us all data within the body
+    //gives us all data within the body(data in the form)
     const body = await readBody(event);
 
     const {error, value} = await schema.validate(body)
-    console.log(value)
+    
 
-    //if we get an error in input
+    //if we get an error in input we throw this error
     if(error){
         throw createError({
             statusCode:412,
@@ -36,33 +37,35 @@ export default defineEventHandler(async(event) => {
         })
     }
 
+    //we destructure body (received from form)
     const{     
         image,        
         name, 
         numberOfSeats,
-        miles,        
-        price,        
         features,     
-        description,   
-        city,          
-        make,           
+        description, 
+        miles,        
+        price,    
+        listerId,
+        city,
+        make,  
         model,      
-        listerId         
     } = body
 
+    //create car 1 car
     const car = await prisma.car.create({
         data:{
             image,        
             name, 
             numberOfSeats,
-            miles,        
-            price,        
             features,     
-            description,   
-            city: city.toLowerCase(),          
-            make,           
-            model,      
-            listerId  
+            description, 
+            miles,        
+            price,    
+            listerId,
+            city: city.toLowerCase(),
+            make,  
+            model,   
         }
 
     })

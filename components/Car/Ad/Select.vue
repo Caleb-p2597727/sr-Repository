@@ -11,10 +11,10 @@
       v-model="state"
     >
       <option             
-        v-for="(options, index) in listOfCarMakes"
-        :key="index"
-        :value="index">
-        {{ options}}
+        v-for="option in options"
+        :key="option.id"
+        :value="option">
+        {{ option}}
       </option>
     </select>
   </div>
@@ -26,8 +26,6 @@ const props = defineProps({
   name: String,
   options: Array,
 });
-
-const listOfCarMakes = useCarMakes();
 
 const emits = defineEmits(["changeInput"]);
 //two way binding

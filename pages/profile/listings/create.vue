@@ -32,6 +32,13 @@
       />
         <!-- listing image upload -->
       <CarAdImage />
+      <div>
+        <button :disabled="isButtonDisabled" 
+        @click="handleSubmit"
+        class="bg-sky-300 text-white rounded py-2 px-7 mt-3">Submit</button>
+        
+      </div>
+      <p v-if="errorMessage"> {{ errorMessage }}</p>
 
     </div>
   </div>
@@ -45,7 +52,8 @@ definePageMeta({
   middleware: ["auth"]
 });
 
-const { makes } = useCarMakes();
+const { makes } = useCars();
+const user =useSupabaseUser()
 
 const info = useState("adInfo", () => {
   return {
@@ -58,12 +66,14 @@ const info = useState("adInfo", () => {
     seats: "",
     features: "",
     description: "",
-    image: null,
+    image: "asdfgh",
   };
 });
+const errorMessage = ref("")
 
 const onChangeInput = (data, name) => {
-  info.value[name] = data;
+  info.value[name] = `${data}`;
+  console.log(data)
 };
 
 const inputs = [
@@ -81,27 +91,67 @@ const inputs = [
   },
   {
     id: 3,
+    title: "Price *",
+    name: "price",
+    placeholder: "100",
+  },
+  {
+    id: 4,
     title: "Miles *",
     name: "miles",
     placeholder: "10000",
   },
   {
-    id: 4,
+    id: 5,
     title: "City *",
     name: "city",
     placeholder: "Austin",
   },
   {
-    id: 5,
+    id: 6,
     title: "Number of Seats *",
     name: "seats",
     placeholder: "5",
   },
   {
-    id: 6,
+    id: 7,
     title: "Features *",
     name: "features",
     placeholder: "Leather Interior, No Accidents",
   },
 ];
+
+// const isButtonDisabled = computed(() => {
+//   for( let key in info.value){
+//     if(!info.value[key]) return true
+//   };
+// })
+
+// const handleSubmit = async () => {
+//   console.log("i ma pressed")
+//   const body = {
+//     ...info.value,
+//     city: info.value.city.toLowerCase(),
+//     features: info.value.features.split(", "),
+//     numberOfSeats: parseInt(info.value.seats),
+//     miles: parseInt(info.value.miles),
+//     price: parseInt(info.value.price),
+//     year: parseInt(info.value.year),
+//     name: `${info.value.make} ${info.value.model}`,
+//     listerId: user.value.id,
+//     image: "agg"
+//   };
+
+//   delete body.seats;
+
+//   try {
+//     const response = await $fetch("/api/car/listings", {
+//       method: "post",
+//       body
+//     })
+//     navigateTo('/profile/listings')
+//   } catch (err){
+//     errorMessage.value = err.statusMessage; 
+//   }
+// }
 </script>

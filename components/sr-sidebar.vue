@@ -23,7 +23,7 @@
           v-model="city"
         />
       </div>
-      <div>
+      <div class="grid place-items-center px-4 py-2 mb-2">
         <button
         @click="onChangeLocation"
         type="submit"
@@ -39,17 +39,18 @@
       <h3 class="font-bold mb-4">Make: {{route.params.make || "Any"}}</h3>
       <div class="grid">
         <select
-          class="border border-neutral-300 flex-grow p-2 rounded text-gray-600 text-sm"
+          class="border border-neutral-300 flex-grow p-2 rounded text-gray-800 text-sm"
           data-te-select-init
           multiple
+          style="color: black;"
         >
           <option
-            v-for="(item, index) in listOfCarMakes"
-            :key="index"
-            :value="index"
-            @click="onChangeMake(item)"
+            v-for="make in makes"
+            :key="make"
+            :value="make"
+            @click="onChangeMake(make)"
           >
-            {{ item }}
+            {{ make }}
           </option>
         </select>
       </div>
@@ -102,6 +103,7 @@
 
 
 <script setup>
+const {makes} = useCars();
 const city = ref("");
 
 const route = useRoute();

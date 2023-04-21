@@ -6,6 +6,7 @@ export default defineEventHandler(async(event) => {
     //grab user id
     const {userId} = event.context.params;
 
+    //using prisma to return all listings matching condition
     return prisma.car.findMany({
         //condition, takes in an object
         where: {
