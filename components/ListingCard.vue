@@ -2,10 +2,10 @@
 <template>
   <div class="shadow rounded overflow-hidden flex justify-between mb-4">
     <div class="flex">
-      <img :src="listing.url" alt="" class="w-80 mr-3 h-44" />
+      <img :src="`https://fhokzwjlcbdialdbmjpq.supabase.co/storage/v1/object/public/images/${listing.image}`" alt="" class="w-80 mr-3 h-44" />
       <div class="p-3">
         <h1 class="text-2xl">{{ listing.name }}</h1>
-        <p class="text-blue-400">${{ listing.price }}</p>
+        <p class="text-blue-400">£{{ listing.price }}/day</p>
       </div>
     </div>
     <div class="p-3 flex">
@@ -26,3 +26,5 @@ const props = defineProps({
 
 const emits = defineEmits(['deleteClick'])
 </script>
+
+84690144707690?t=2023-04-22T00%3A22%3A20.804Z
