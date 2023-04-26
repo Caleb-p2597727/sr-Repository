@@ -16,6 +16,7 @@
         <input
           type="text"
           class="relative m-0 w-0.5 min-w-0 flex-auto rounded-r border border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition ease-in-out focus:z-[3] focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none"
+          :class="cityError ? 'border-red-500 border' : ''"
           placeholder="City"
           aria-label="City"
           aria-describedby="basic-addon1"
@@ -105,10 +106,10 @@
 <script setup>
 const {makes} = useCars();
 const city = ref("");
-
 const route = useRoute();
-
 const router = useRouter()
+
+const cityError = ref(false)
 
 const priceRangeText = computed(() => {
   const minPrice = route.query.minPrice;
@@ -146,6 +147,9 @@ const onViewAllResults = () => {
 
 //we push the path /city/input value/car
 const onChangeLocation = () => {
+  if(!city.value) return{
+    return :cityError.value = true
+  }
   navigateTo(`/city/${city.value}/cars`);
   //we empty input
   city.value = "";
