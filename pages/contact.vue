@@ -52,7 +52,7 @@
                                             placeholder="Email address">
                                     </div>
                                     <div class="form-group mb-6">
-                                        <textarea class="
+                                        <textarea ref="inputRef" class="
                   form-control
                   block
                   w-full
@@ -95,7 +95,7 @@
                 active:bg-blue-800 active:shadow-lg
                 transition
                 duration-150
-                ease-in-out">Send</button>
+                ease-in-out" @click="handleContact">Send</button>
                                 </form>
                             </div>
                             <div class="grow-0 shrink-0 basis-auto w-full xl:w-7/12">
@@ -129,7 +129,7 @@
             </section>
             <!-- Section: Design Block -->
         </div>
-        <!-- Container -->
+        <!-- Container for demo purpose -->
 
     </div>
 </template>
@@ -139,10 +139,20 @@ definePageMeta({
     layout: "sr-browse"
 })
 
-//changes head of tab
+//changes head to cars in (adds dynamic [] name)
 useHead({
     title: "Get in touch",
 });
+
+const inputRef = ref(null);
+
+const handleContact = () => {
+  alert("Your message has been sent!");
+  navigateTo("/");
+  if (inputRef.value) {
+    inputRef.value.value = ""; // clear input field if it exists
+  }
+};
 
 </script>
 
