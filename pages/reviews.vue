@@ -36,7 +36,7 @@
   
     const handleReview = () => {
       alert("Review submitted!");
-    //   navigateTo("/");
+      navigateTo("/");
       if (inputRef.value) {
         inputRef.value.value = ""; // clear input field if it exists
       }
