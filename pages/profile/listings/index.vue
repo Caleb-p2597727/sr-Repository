@@ -8,6 +8,7 @@
         >+</NuxtLink
       >
     </div>
+    <!-- Display all listings using ListingCard component -->
     <div class="shadow rounded p-3 mt-5">
         <!-- all cars within listings are displayed -->
       <ListingCard
@@ -26,18 +27,21 @@ definePageMeta({
   //authorisation
   middleware: ["auth"]
 });
-const user = useSupabaseUser();
-//uses listings data
-// const { listings } = useCars();
 
+// Get current user
+const user = useSupabaseUser();
+
+// Fetch listings data for the current user
 const {data:listings, refresh} = await useFetch(
   `/api/car/listings/user/${user.value.id}`
 )
 
 const handleDelete = async(id) => {
+  // Delete listing from backend
   await $fetch(`/api/car/listings/${id}`,{  
     method: "delete"
   });
+  // Remove deleted listing from listings data
   listings.value = listings.value.filter((listing) => listing.id !== id);
   
 }
