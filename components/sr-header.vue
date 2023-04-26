@@ -47,16 +47,16 @@ const props = defineProps({
 })
 
 
-
+// Importing Supabase user and client functions
 const user = useSupabaseUser()
 const supabase = useSupabaseClient()
 
-// const supabase = useSupabaseAuthClient()
-// const user = useSupabaseUser()
 
+// Async function for logging in with Google OAuth
 const login = async () => {
     console.log("clicked");
     
+    // Attempt to sign in with Google OAuth provider
     const {error} = supabase.auth.signInWithOAuth({
         provider: "google"
     })
@@ -70,6 +70,8 @@ const login = async () => {
 const logout = async () => {
   //make user.value = null
   //remove JWT from cookie browser
+
+  // Attempt to sign out using Supabase
   const {error} = await supabase.auth.signOut()
 
   if(error) {

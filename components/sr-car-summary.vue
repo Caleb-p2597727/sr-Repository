@@ -36,6 +36,7 @@ const props = defineProps({
   }
 })
 
+// Extract the `id` from `props.item`
 const id = props.item.id
 
 const handleSearch = () => {
@@ -46,7 +47,6 @@ const handleSearch = () => {
 }
 
 //this is for the heart that appears next to th listing, shows its favioured by the 
-//customer, not fully finished but dosen't need to be completed
 const favored = useState(`favored-${id}`, () => {
   return false
 })
