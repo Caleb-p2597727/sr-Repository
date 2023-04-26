@@ -37,7 +37,7 @@
             <ul class="list-disc ml-4 mb-4">
                 <li>SpeedyRentals, Inc.</li>
                 <li>1234 Main St.</li>
-                <li>Anytown, USA 12345</li>
+                <li>Leicester, UK LE1</li>
                 <li>Email: privacy@speedyrentals.com</li>
             </ul>
     </div>
@@ -49,7 +49,7 @@
 definePageMeta({
     layout: "sr-browse"
 })
-//changes head to cars in (adds dynamic [] name)
+
 useHead({
     title: "Privacy",
 });
