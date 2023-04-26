@@ -38,8 +38,8 @@ const handleDelete = async(id) => {
   await $fetch(`/api/car/listings/${id}`,{  
     method: "delete"
   });
-  // listings.value = listings.value.filter((listing) => listing.id !== id);
-  refresh
+  listings.value = listings.value.filter((listing) => listing.id !== id);
+  
 }
 
 </script>
