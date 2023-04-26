@@ -3,7 +3,7 @@
 
     <div class="grid grid-cols-3 h-full">
 
-      <NuxtImg :src="props.item.image" alt="" class="w-[300px] h-full" @click="handleSearch()"/>
+      <NuxtImg :src="`https://fhokzwjlcbdialdbmjpq.supabase.co/storage/v1/object/public/images/${props.item.image}`" alt="" class="w-[300px] h-full" @click="handleSearch()"/>
 
       <div class="p-4 flex flex-col">
         <div>
