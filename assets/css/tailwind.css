@@ -1,7 +1,7 @@
 /* purgecss start ignore */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
+@import 'tailwindcss/base'; /* Import the base styles from the Tailwind CSS framework */
+@import 'tailwindcss/components'; /* Import the component styles from the Tailwind CSS framework */
 /* purgecss end ignore */
-@import 'tailwindcss/utilities';
+@import 'tailwindcss/utilities'; /* Import the utility classes from the Tailwind CSS framework */
 
-@import url('./fonts.css');
+@import url('./fonts.css'); /* Import another CSS file called 'fonts.css' from the current directory */

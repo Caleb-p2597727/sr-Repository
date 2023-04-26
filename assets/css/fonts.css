@@ -1,6 +1,7 @@
+/* Define a new font-face with the name 'Montserrat-SemiBoldItalic' */
 @font-face {
     font-family: 'Montserrat-SemiBoldItalic';
-    src: url('../fonts/Montserrat-SemiBoldItalic.ttf') format('truetype');
+    src: url('../fonts/Montserrat-SemiBoldItalic.ttf') format('truetype'); /* The URL of the font file and its format */
     font-weight: normal;
     font-style: normal;
   }
