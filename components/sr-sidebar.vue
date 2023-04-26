@@ -104,13 +104,16 @@
 
 
 <script setup>
+// Importing data and utility functions from the useCars module
 const {makes} = useCars();
 const city = ref("");
 const route = useRoute();
 const router = useRouter()
 
+// Creating reactive variables for input validation errors
 const cityError = ref(false)
 
+// Computed property for displaying selected price range as text
 const priceRangeText = computed(() => {
   const minPrice = route.query.minPrice;
   const maxPrice = route.query.maxPrice;
@@ -160,7 +163,6 @@ const onChangeMake = (make) => {
   navigateTo(`/city/${route.params.city}/cars/${make}`);
 };
 
-const listOfCarMakes = useCarMakes();
 
 const priceRange = ref({
   min: "",
