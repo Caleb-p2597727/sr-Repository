@@ -5,7 +5,7 @@
         <div class="grid grid-cols-16 mb-5 gap-y-1 text-white space-x-2 ">
             <div class="col-span-8 mb-5">
                 <h2 class="mb-4 text-4xl font-semibold">Fast and easy way to <u>share</u> and <u>rent</u> a car</h2>
-                <h4 class="mb-6 text-xl font-semibold">Subheading</h4>
+                <h4 class="mb-6 text-xl font-semibold">All on SpeedyRental</h4>
             </div>
             <div class="">
                 <label for="location" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Location</label>
