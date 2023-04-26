@@ -26,5 +26,3 @@ const props = defineProps({
 
 const emits = defineEmits(['deleteClick'])
 </script>
-
-84690144707690?t=2023-04-22T00%3A22%3A20.804Z

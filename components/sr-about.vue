@@ -56,10 +56,10 @@
     </div>
   </div>
 </section>
-<!-- Section: Design Block -->
+
 
 </div>
-<!-- Container for demo purpose -->
+
 
     </div>
 </template>
@@ -67,7 +67,3 @@
 <script>
 
 </script>
-
-<style lang="scss" scoped>
-
-</style>
