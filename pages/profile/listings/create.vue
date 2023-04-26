@@ -54,6 +54,7 @@ definePageMeta({
 
 const { makes } = useCars();
 const user =useSupabaseUser()
+const supabase = useSupabaseClient()
 
 const info = useState("adInfo", () => {
   return {
@@ -66,7 +67,7 @@ const info = useState("adInfo", () => {
     seats: "",
     features: "",
     description: "",
-    image: "asdfgh",
+    image: null,
   };
 });
 const errorMessage = ref("")
@@ -121,15 +122,31 @@ const inputs = [
   },
 ];
 
-const isButtonDisabled = computed(() => {
-  for( let key in info.value){
-    if(!info.value[key]) return true
-  };
-  return false
-})
+// const isButtonDisabled = computed(() => {
+//   for( let key in info.value){
+//     if(!info.value[key]) return true
+//   };
+//   return false
+// })
 
 const handleSubmit = async () => {
-  console.log("i ma pressed")
+  //randomise image file name to reduce chances of getting image file number as someone else
+  const fileName = Math.floor(Math.random() * 100000000)
+
+  // convert the image data to a Blob object
+  const imageData = new Blob([info.value.image], );
+
+  const {data, error} = await supabase.storage.from("images").upload("public/" +fileName, imageData, {
+     contentType: imageData.type 
+  })
+  console.log("data:", data.path);
+  console.log("error:", error); 
+  console.log(data.path);
+
+  if(error){
+    return errorMessage.value = "Cannot upload image"; 
+
+  }
   // destructure body
   const body = {
     ...info.value,
@@ -141,7 +158,8 @@ const handleSubmit = async () => {
     year: parseInt(info.value.year),
     name: `${info.value.make} ${info.value.model}`,
     listerId: user.value.id,
-    image: "agg"
+    //url path for my image
+    image: data.path,
   };
 
   // we dont need
@@ -150,11 +168,12 @@ const handleSubmit = async () => {
   try {
     const response = await $fetch("/api/car/listings", {
       method: "post",
-      body
+      body,
     })
     navigateTo('/profile/listings')
   } catch (err){
     errorMessage.value = err.statusMessage; 
+    await supabase.storage.from("images").remove(data.path)
   }
 }
 </script>
