@@ -9,10 +9,11 @@
 <script setup>
 definePageMeta({
   layout: "sr-browse",
-  //authorisation
+  //authorisation needed to access
   middleware: ["auth"]
 });
 const route = useRoute();
 
+//fetch messages
 const {data: messages} = useFetch(`/api/car/listings/${route.params.id}/message`)
 </script>

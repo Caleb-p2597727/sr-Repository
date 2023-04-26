@@ -56,6 +56,7 @@ const { makes } = useCars();
 const user =useSupabaseUser()
 const supabase = useSupabaseClient()
 
+// Define the state and initial values for the form inputs
 const info = useState("adInfo", () => {
   return {
     make: "",
@@ -72,11 +73,13 @@ const info = useState("adInfo", () => {
 });
 const errorMessage = ref("")
 
+// Define a function to update the input data when user types in the form
 const onChangeInput = (data, name) => {
   info.value[name] = `${data}`;
   console.log(data)
 };
 
+// Define an array of input objects for the form
 const inputs = [
   {
     id: 1,
@@ -129,6 +132,7 @@ const inputs = [
 //   return false
 // })
 
+
 const handleSubmit = async () => {
   //randomise image file name to reduce chances of getting image file number as someone else
   const fileName = Math.floor(Math.random() * 100000000)
@@ -136,6 +140,7 @@ const handleSubmit = async () => {
   // convert the image data to a Blob object
   const imageData = new Blob([info.value.image], );
 
+  // Upload the image to Supabase storage and get the response and error (if any)
   const {data, error} = await supabase.storage.from("images").upload("public/" +fileName, imageData, {
      contentType: imageData.type 
   })
@@ -147,6 +152,8 @@ const handleSubmit = async () => {
     return errorMessage.value = "Cannot upload image"; 
 
   }
+
+  // Destructure the form data into a new object with updated properties
   // destructure body
   const body = {
     ...info.value,
