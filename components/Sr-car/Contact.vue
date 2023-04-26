@@ -17,7 +17,10 @@
 </template>
 
 <script setup>
+// Import the `useRoute` method to access the current route object
 const route = useRoute();
+
+// Define a reactive `message` object containing user data
 const message = ref({
     name: "",
     email: "",
@@ -28,6 +31,7 @@ const message = ref({
 const errorMessage = ref("")
 const successMessage = ref("")
 
+//computed property to check if any fields in `message` are empty
 //validation client side
 const disabledButton = computed(() => {
     for(let key in message.value){
@@ -38,10 +42,13 @@ const disabledButton = computed(() => {
 
 const onSubmit = async() => {
     try {
+        // Send a POST request to the server with the user data
     const response = await $fetch(`/api/car/listings/${route.params.id}/message`, {
       method: "post",
       body: message.value,
     });
+
+    // Clear the `message` object and display a success message
     message.value = {
         name: "",
         email: "",
@@ -54,6 +61,7 @@ const onSubmit = async() => {
     successMessage.value = ""
     //sucess message needed
   } catch (err){
+    // Display an error message if the server returns an error
     errorMessage.value = err.statusMessage; 
   }
 }
