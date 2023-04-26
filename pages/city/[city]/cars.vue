@@ -2,7 +2,6 @@
 
 <template>
     <div>
-      <!-- {{ cars }} -->
         <div class="mt-20 flex">
             <!--this sidebar will now be static even when we access different paths within car-->
             <Sr-sidebar></Sr-sidebar>
@@ -28,7 +27,7 @@ let city = route.path.split("/")[2]
 
 //changes head to cars in (adds dynamic [] name)
 useHead({
-    title: `Cars in ${toTitleCase(city)}`,
+    title: `${route.params.make || ""} Cars in ${toTitleCase(city)}`,
 });
 
 //fuction returns title case
@@ -41,6 +40,7 @@ function toTitleCase(str) {
   );
 }
 
+//applies query parameters and filters
 const {data: cars, refresh} = await useFetchCars(route.params.city, {
   minPrice: route.query.minPrice,
   maxPrice: route.query.maxPrice,
@@ -54,17 +54,6 @@ watch(
     window.location.reload(true);
   });
 
-
-
-  //imports list of cars from composable/useCars.js
-// const cars = useCars()
-// console.log(cars)
-//const { cars, listings } = useCars();
-
-//filters through cars object for cars with property city == city(retrieved from router)
-// const listByCity = cars.filter((obj) => {
-//     return (obj.city).toLowerCase( ) == city;
-// })
 </script>
 
 
