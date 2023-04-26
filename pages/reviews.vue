@@ -20,26 +20,29 @@
     </div>
   </template>
   
-  <script setup>
-    // import { navigateTo } from "@nuxtjs/composition-api";
+<script setup>
+
+
+  definePageMeta({
+    layout: "sr-browse",
+  });
+
+  definePageMeta({
+  layout: "sr-browse"
+})
   
-    definePageMeta({
-      layout: "sr-browse",
-    });
-    
-    const inputRef = ref(null);
-  
-    //changes head to cars in (adds dynamic [] name)
-    useHead({
-      title: "Leave a review",
-    });
-  
-    const handleReview = () => {
-      alert("Review submitted!");
-      navigateTo("/");
-      if (inputRef.value) {
-        inputRef.value.value = ""; // clear input field if it exists
-      }
-    };
-  </script>
-  
+  const inputRef = ref(null);
+
+  //changes head to cars in (adds dynamic [] name)
+  useHead({
+    title: "Leave a review",
+  });
+
+  const handleReview = () => {
+    alert("Review submitted!");
+    navigateTo("/");
+    if (inputRef.value) {
+      inputRef.value.value = ""; // clear input field if it exists
+    }
+  };
+</script>

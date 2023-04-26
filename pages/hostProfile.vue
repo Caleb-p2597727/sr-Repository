@@ -49,8 +49,8 @@
 const {reviews} = useCars()
 
 definePageMeta({
-  layout: "sr-browse",
-});
+    layout: "sr-browse"
+})
 
   //changes head to cars in (adds dynamic [] name)
 useHead({
