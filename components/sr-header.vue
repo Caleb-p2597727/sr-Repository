@@ -17,7 +17,7 @@
         </div>
         <nav class="hidden space-x-10 md:flex">
 
-          <NuxtLink to="/" class="text-base font-medium text-gray-500 hover:text-gray-900">Browse</NuxtLink>
+          <NuxtLink to="/city/liverpool/cars" class="text-base font-medium text-gray-500 hover:text-gray-900">Browse</NuxtLink>
           <NuxtLink to="/" class="text-base font-medium text-gray-500 hover:text-gray-900">Home</NuxtLink>
         </nav>
         <div v-if="user" class="hidden items-center justify-end md:flex md:flex-1 lg:w-0">

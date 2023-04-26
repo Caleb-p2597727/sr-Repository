@@ -45,7 +45,7 @@
                 <a href="/" class="text-gray-600">Home</a>
               </p>
               <p class="mb-4">
-                <a href="/city/stoke/cars" class="text-gray-600">Browse</a>
+                <a href="/city/liverpool/cars" class="text-gray-600">Browse</a>
               </p>
               <p class="mb-4">
                 <a href="/about" class="text-gray-600">About</a>
