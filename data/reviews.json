@@ -1,0 +1,29 @@
+
+[
+  {
+    "id": 1,
+    "stars": 5,
+    "message": "Great service, will be coming again"
+  },
+  {
+    "id": 2,
+    "stars": 4,
+    "message": "Amazig car and amazing service, only slighlty dirty inside"
+  },
+  {
+    "id": 3,
+    "stars": 4,
+    "message": "Great service, will be coming again"
+  },
+  {
+    "id": 4,
+    "stars": 5,
+    "message": "Great service, will be coming again"
+  },
+  {
+    "id": 5,
+    "stars": 3,
+    "message": "Great service, will be coming again"
+  }
+
+]
