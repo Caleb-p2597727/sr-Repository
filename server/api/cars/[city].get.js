@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
                 equals: city.toLowerCase(),
             },
             make: make ? {
-                equals: make.toLowerCase(),
+                equals: make,
             } : undefined,
             price: minPrice && maxPrice ? {
                 gte: parseInt(minPrice),
