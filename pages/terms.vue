@@ -1,6 +1,6 @@
 <template>
 
-  <div class="bg-gradient-to-b from-indigo-700 to-indigo-900 text-white">
+  <div class="bg-gradient-to-b ">
     <div class="max-w-4xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
       <h1 class="text-4xl font-extrabold mb-8">Terms of Use</h1>
 
@@ -39,10 +39,13 @@
 </div>
 </template>
 
-<script>
+<script setup>
+definePageMeta({
+    layout: "sr-browse"
+})
+
+useHead({
+    title: "Terms of use",
+});
 
 </script>
-
-<style lang="scss" scoped>
-
-</style>
