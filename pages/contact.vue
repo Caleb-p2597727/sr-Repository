@@ -134,7 +134,7 @@ const inputRef = ref(null);
 
 const handleContact = () => {
   alert("Your message has been sent!");
-  navigateTo("/");
+  
   if (inputRef.value) {
     inputRef.value.value = ""; // clear input field if it exists
   }
