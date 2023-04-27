@@ -6,7 +6,7 @@
         </h2>
       </div>
       <!-- main div -->
-      <div class="h-52 w-92 px-3 rounded-2xl mx-56">
+      <div class="h-52 w-92 px-3 rounded-2xl mx-56 px-44">
         <input type="input" ref="inputRef" class="h-32 w-72 border-2" />
         <br />
         <button
