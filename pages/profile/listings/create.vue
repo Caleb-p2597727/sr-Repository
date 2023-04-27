@@ -52,6 +52,10 @@ definePageMeta({
   middleware: ["auth"]
 });
 
+useHead({
+    title: "New listing",
+});
+
 const { makes } = useCars();
 const user =useSupabaseUser()
 const supabase = useSupabaseClient()
