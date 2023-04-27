@@ -28,6 +28,12 @@ definePageMeta({
   middleware: ["auth"]
 });
 
+
+useHead({
+    title: "Listed cars",
+});
+
+
 // Get current user
 const user = useSupabaseUser();
 
