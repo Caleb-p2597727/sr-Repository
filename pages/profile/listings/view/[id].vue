@@ -2,7 +2,11 @@
 
 <template>
   <div class="rounded shadow mt-20">
-    <CarMessageCard v-for="message in messages" :key="message.id" :message="message"/>
+    <h1 v-if="!messages">Loading...</h1>
+    <!-- If there are messages, display them using the CarMessageCard component -->
+    <CarMessageCard v-if="messages && messages.length" v-for="message in messages" :key="message.id" :message="message"/>
+    <!-- If there are no messages, display this message instead -->
+    <h1 v-else class="text-red-600">This car has no enquires</h1>
   </div>
 </template>
 
@@ -11,6 +15,10 @@ definePageMeta({
   layout: "sr-browse",
   //authorisation needed to access
   middleware: ["auth"]
+});
+
+useHead({
+    title: "Enquiries",
 });
 const route = useRoute();
 
